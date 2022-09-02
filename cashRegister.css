@@ -64,6 +64,7 @@ input{
   }
 
   .change-return {
+    background-color: var(--secondary-color);
     width: 50%;
     border-collapse: collapse;
     margin: auto;

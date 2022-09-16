@@ -12,8 +12,8 @@ checkButton.addEventListener("click", changeOperation)
 function changeOperation(){
     hideMassage();
     if(billAmount.value > 0){
-        var cash = cashGiven.value;
-        var bill = billAmount.value;
+        var cash = Number(cashGiven.value);
+        var bill = Number(billAmount.value);
 
         if(cash > bill){
             var amountToBeReturn = cashGiven.value - billAmount.value;
@@ -45,6 +45,9 @@ function changeCalculator(amountToBeReturn){
     for(var i=0; i<awailableNotes.length; i++){
         var numberOfNotes = Math.trunc(amountToBeReturn / awailableNotes[i]);
         amountToBeReturn = amountToBeReturn % awailableNotes[i];
+        if(numberOfNotes ===0){
+            numberOfNotes = " ";
+        }
         noOfNotes[i].innerHTML = numberOfNotes;
     }
 }

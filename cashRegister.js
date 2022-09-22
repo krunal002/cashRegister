@@ -19,6 +19,9 @@ function changeOperation(){
             var amountToBeReturn = cashGiven.value - billAmount.value;
             changeCalculator(amountToBeReturn);
         }
+        else if(cash === bill){
+            equalAmount("Bill has been paid. No need to return change!");
+        }
         else{
             invalidInput("Do you wanna wash plates?");
         }
@@ -30,15 +33,23 @@ function changeOperation(){
 
 function hideMassage(){
     message.style.display = "none";
+    // table.style.display = "block";
 }
 
 function showMassage(){
     message.style.display = "block";
+    // table.style.display = "none";
 }
 
 function invalidInput( msg ){
     showMassage();
     message.innerHTML = msg;
+}
+
+function equalAmount( msg ){
+    showMassage();
+    message.innerHTML = msg;
+    message.style.color = "#facc15";
 }
 
 function changeCalculator(amountToBeReturn){

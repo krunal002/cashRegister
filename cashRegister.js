@@ -44,12 +44,14 @@ function showMassage(){
 function invalidInput( msg ){
     showMassage();
     message.innerHTML = msg;
+    changeCalculator(0);
 }
 
 function equalAmount( msg ){
     showMassage();
     message.innerHTML = msg;
     message.style.color = "#facc15";
+    changeCalculator(0);
 }
 
 function changeCalculator(amountToBeReturn){
